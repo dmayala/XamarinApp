@@ -96,6 +96,12 @@
     <Compile Include="HotDogDetailViewController.designer.cs">
       <DependentUpon>HotDogDetailViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\HotDogDataSource.cs" />
+    <Compile Include="HotDogTableViewController.cs" />
+    <Compile Include="HotDogTableViewController.designer.cs">
+      <DependentUpon>HotDogTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\HotDogListCell.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -111,5 +117,9 @@
     <BundleResource Include="Images\hotdog4.jpg" />
     <BundleResource Include="Images\hotdog5.jpg" />
     <BundleResource Include="Images\hotdog6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataSources\" />
+    <Folder Include="Cells\" />
   </ItemGroup>
 </Project>
