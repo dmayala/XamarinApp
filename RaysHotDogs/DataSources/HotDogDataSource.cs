@@ -6,14 +6,16 @@ using Foundation;
 
 namespace RaysHotDogs
 {
-	public class HotDogDataSoruce : UITableViewSource
+	public class HotDogDataSource : UITableViewSource
 	{
 		private List<HotDog> hotDogs;
 		NSString cellIdentifier = new NSString("HotDogCell");
+		HotDogTableViewController callingController;
 
-		public HotDogDataSoruce(List<HotDog> hotDogs, UITableViewController callingController)
+		public HotDogDataSource(List<HotDog> hotDogs, HotDogTableViewController callingController)
 		{
 			this.hotDogs = hotDogs;
+			this.callingController = callingController;
 		}
 
 		public override nint RowsInSection(UITableView tableview, nint section)
@@ -23,19 +25,30 @@ namespace RaysHotDogs
 
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 		{
-			var cell = tableView.DequeueReusableCell(cellIdentifier) as HotDogListCell;
+			var cell = tableView.DequeueReusableCell(cellIdentifier) as UITableViewCell;
 
 			if (cell == null)
-			{
-				cell = new HotDogListCell(cellIdentifier);
+			{ 
+				cell = new UITableViewCell(UITableViewCellStyle.Default, cellIdentifier); 
 			}
 
-			cell.UpdateCell(hotDogs[indexPath.Row].Name,
-				hotDogs[indexPath.Row].Price.ToString(),
-				UIImage.FromFile($"Images/hotdog{hotDogs[indexPath.Row].HotDogId}.jpg")
-			);
+			var hotDog = hotDogs[indexPath.Row];
+			cell.TextLabel.Text = hotDog.Name;
+			cell.ImageView.Image = UIImage.FromFile($"Images/hotdog{hotDogs[indexPath.Row].HotDogId}.jpg");
 
-			return cell;∂
+			return cell;
+		}
+
+		public HotDog GetItem(int id) 
+		{
+			return hotDogs[id];
+		}
+
+		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+		{
+			var selectedHotDog = hotDogs[indexPath.Row];
+			callingController.HotDogSelected(selectedHotDog);
+			tableView.DeselectRow(indexPath, true);
 		}
 	}
 }
