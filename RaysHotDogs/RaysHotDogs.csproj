@@ -102,6 +102,19 @@
       <DependentUpon>HotDogTableViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Cells\HotDogListCell.cs" />
+    <Compile Include="MeatLoversTableViewController.cs" />
+    <Compile Include="MeatLoversTableViewController.designer.cs">
+      <DependentUpon>MeatLoversTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FavoriteTableViewController.cs" />
+    <Compile Include="FavoriteTableViewController.designer.cs">
+      <DependentUpon>FavoriteTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VeggieLoversTableViewController.cs" />
+    <Compile Include="VeggieLoversTableViewController.designer.cs">
+      <DependentUpon>VeggieLoversTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\BaseUITableViewController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -117,9 +130,15 @@
     <BundleResource Include="Images\hotdog4.jpg" />
     <BundleResource Include="Images\hotdog5.jpg" />
     <BundleResource Include="Images\hotdog6.jpg" />
+    <BundleResource Include="Resources\meatloversicon.png" />
+    <BundleResource Include="Resources\meatloversicon%402x.png" />
+    <BundleResource Include="Resources\splash.png" />
+    <BundleResource Include="Resources\veggieloversicon.png" />
+    <BundleResource Include="Resources\veggieloversicon%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataSources\" />
     <Folder Include="Cells\" />
+    <Folder Include="Utility\" />
   </ItemGroup>
 </Project>

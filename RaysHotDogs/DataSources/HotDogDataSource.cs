@@ -1,7 +1,7 @@
 ﻿using System;
 using UIKit;
-using System.Collections.Generic;
 using RaysHotDogs.Core;
+using System.Collections.Generic;
 using Foundation;
 
 namespace RaysHotDogs
@@ -10,9 +10,9 @@ namespace RaysHotDogs
 	{
 		private List<HotDog> hotDogs;
 		NSString cellIdentifier = new NSString("HotDogCell");
-		HotDogTableViewController callingController;
+		BaseUITableViewController callingController;
 
-		public HotDogDataSource(List<HotDog> hotDogs, HotDogTableViewController callingController)
+		public HotDogDataSource(List<HotDog> hotDogs, BaseUITableViewController callingController)
 		{
 			this.hotDogs = hotDogs;
 			this.callingController = callingController;

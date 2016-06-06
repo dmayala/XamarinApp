@@ -14,5 +14,11 @@ namespace RaysHotDogs.Core
 		public string ImagePath { get; set; }
 		public List<HotDog> HotDogs { get; set; }
 	}
+
+	public enum HotDogGroupOptions {
+		None,
+		MeatLovers,
+		VeggieLovers
+	}
 }
 

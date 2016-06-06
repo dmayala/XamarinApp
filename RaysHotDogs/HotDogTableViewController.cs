@@ -6,7 +6,7 @@ using RaysHotDogs.Core;
 
 namespace RaysHotDogs
 {
-	public partial class HotDogTableViewController : UITableViewController
+	public partial class HotDogTableViewController : BaseUITableViewController
 	{
 		HotDogDataService dataService = new HotDogDataService();
 
