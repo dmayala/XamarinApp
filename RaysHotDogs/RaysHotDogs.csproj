@@ -77,6 +77,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.Mobile">
+      <HintPath>..\Components\xamarin.mobile-0.7.7\lib\ios-unified\Xamarin.Mobile.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
@@ -115,6 +118,10 @@
       <DependentUpon>VeggieLoversTableViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\BaseUITableViewController.cs" />
+    <Compile Include="TakePictureViewController.cs" />
+    <Compile Include="TakePictureViewController.designer.cs">
+      <DependentUpon>TakePictureViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -140,5 +147,11 @@
     <Folder Include="DataSources\" />
     <Folder Include="Cells\" />
     <Folder Include="Utility\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="xamarin.mobile">
+      <Version>0.7.7</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>
